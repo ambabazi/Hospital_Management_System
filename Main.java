@@ -13,17 +13,18 @@ import java.sql.Time;
 public class Main {
     static void main(String[] args) throws SQLException {
 
-//
-//        Patients patient = new Patients("Agnes", "Mbabazi", Date.valueOf("2000-11-11"), "female", "078965492", "ambg@gmail.com");
+        Patients patient = new Patients("Agnes", "Mbabazi", Date.valueOf("2000-11-11"), "female", "078965492", "ambg@gmail.com");
 
         Doctors doctors = new Doctors("Marie", "Merci", "Cardiology", "077948357", "mmm@gmail.com");
 
+        Appointments appointments = new Appointments(1,1, Date.valueOf("2026-03-13"), "Examined");
 
         ApplicationContext myContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         HospitalServices service = myContext.getBean(HospitalServices.class);
-//                service.savePatient(patient);
+                service.savePatient(patient);
                 service.saveDoctor(doctors);
+                 service.setAppointmentsDAO(appointments);
 
         System.out.println("Added to the database successfully");
     }

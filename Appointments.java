@@ -1,21 +1,19 @@
 package org.example;
 
-import java.sql.Time;
+import java.sql.Date;
 
 public class Appointments {
 
     private int doctor_id;
     private int patient_id;
-    private Time appointment_date;
+    private Date appointment_date;
     private String status;
-    private Time created_at;
 
-    public Appointments(int doctor_id, int patient_id, Time appointment_date, String status, Time created_at) {
+    public Appointments(int doctor_id, int patient_id, Date appointment_date, String status) {
         this.doctor_id = doctor_id;
         this.patient_id = patient_id;
         this.appointment_date = appointment_date;
         this.status = status;
-        this.created_at = created_at;
     }
 
     public int getDoctor_id() {
@@ -34,11 +32,11 @@ public class Appointments {
         this.patient_id = patient_id;
     }
 
-    public Time getAppointment_date() {
+    public Date getAppointment_date() {
         return appointment_date;
     }
 
-    public void setAppointment_date(Time appointment_date) {
+    public void setAppointment_date(Date appointment_date) {
         this.appointment_date = appointment_date;
     }
 
@@ -48,13 +46,5 @@ public class Appointments {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Time getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(Time created_at) {
-        this.created_at = created_at;
     }
 }

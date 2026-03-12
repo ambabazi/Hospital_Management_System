@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.DAO.AppointmentsDAO;
 import org.example.DAO.DoctorsDAO;
 import org.example.DAO.PatientsDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ public class HospitalServices {
     private PatientsDAO patientsDAO;
     @Autowired
     private DoctorsDAO doctorsDAO;
+    @Autowired
+    private AppointmentsDAO appointmentsDAO;
 
 
     public void savePatient(Patients patient) throws SQLException {
@@ -22,5 +25,9 @@ public class HospitalServices {
 
     public void saveDoctor(Doctors doctors) throws SQLException {
         doctorsDAO.insertDoctors(doctors);
+    }
+
+    public void setAppointmentsDAO(Appointments appointments) throws SQLException {
+        appointmentsDAO.insertAppointments(appointments);
     }
 }
